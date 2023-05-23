@@ -1,0 +1,85 @@
+<html>
+    <body>
+        <form action="details" method="post">
+  <table border="1" cellspacing="0px" style="background-color: pink;margin-top: 2%;">
+            <tbody>
+                <tr><td><label for="nm">Name</label></td>
+                <td><input type="text" name="name" id="nm" required autofocus></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr><td><label for="EC">Employee Code</label></td>
+                <td><input size="5" type="text" name="code" id="EC"></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr >
+                    <td rowspan="4"><label >Department</label></td>
+                    <td>
+                        <input type="radio"name="dept" id="De" value="De" ><label for="De">ADMIN</label>
+                  <br>
+                        <input type="radio"name="dept" id="hr" value="hr" ><label for="hr">HR</label>
+                    <br>
+                        <input type="radio"name="dept" id="te" value="te" ><label for="te">TECHNICAL</label>
+                <br>
+                        <input type="radio"name="dept" id="acc" value="acc" ><label for="acc">ACCOUNT</label>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td rowspan="2"><label >Date of Joining</label></td>
+                    <td>
+                        <input size="1" type="text" name="day" id="dd" ><b>/</b>
+                        <input size="1" type="text" name="month" id="mm" ><b>/</b>
+                        <input size="2" type="text" name="year" id="yyyy" ><b></b>
+                        <br>
+                        <div>&nbsp;&nbsp;DD  &nbsp;&nbsp;&nbsp;&nbsp; MM&nbsp; &nbsp;&nbsp;&nbsp;YYYY</div>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                   <td ><label >Address</label></td>
+                   <td>
+                    <textarea name="address" id="addr" cols="30" rows="4"></textarea>
+                   </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td ><label >Training programs Attended</label></td>
+                    <td>
+                        <input type="checkbox" name="skill" id="html/dhtml" value="html/dhtml"><label for="html/dhtml">HTML/DHTML</label><br>
+                        <input type="checkbox" name="skill" id="java" value="java"><label for="java">JAVA</label><br>
+                        <input type="checkbox" name="skill" id="client/server" value="client/server"><label for="client/server">CLIENT/SERVER</label><br>
+                        <input type="checkbox" name="skill" id=".net" value=".net"><label for=".net">.net</label><br>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td ><label >Training programs need to Attend</label></td>
+                    <td>
+                            <textarea name="abc" id="training" cols="10" rows="2">JAVASCRIPT JSTRUTS</textarea>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><label for="">Send the information at</label></td>
+                   <td> <a href="empinfo@patni.com" target="_blank">empinfo@patni.com</a></td>
+                </tr>
+            </tbody>
+           
+        </table>
+        <br>
+        <tr >
+            <td ><button type="submit" name="btn" id=submit value="submit">Sumbit</button>
+                &nbsp;&nbsp;&nbsp;
+            <button type="reset" name="btn" id=reset value="reset">Cancel</button></td>
+        </tr>
+        </form>
+      
+    </body>
+</html>
