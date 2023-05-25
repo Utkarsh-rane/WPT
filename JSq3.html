@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            span{
+                color: red;
+            }
+        </style>
+       <script>
+        
+        function validatedata(num1, err)
+        {
+            var a=document.getElementById(num1).value
+            if(a==="" || isNaN(a))
+            {
+                document.getElementById(err).innerHTML="enter numeric value"
+                return false;
+            }
+            return true;
+        }
+        function validatenum()
+       {
+        var flaga=validatedata('n1','err1')
+        if(flaga)
+        {
+            printeven()
+        }
+       }
+       function printeven(){
+        var n=parseInt(document.getElementById('n1').value)
+         i=0;
+        while(i<=n)
+        {
+        if(i%2==0)
+        {
+            document.getElementById('out').value +=i+"\n"
+        }
+        i++;
+        }
+       }
+       </script>
+    </head> 
+    <body>
+        <form name="even">
+<fieldset style="margin:0% 60% 0% 20%;">
+    
+    Enter number: <input type="text" name="num1" id="n1" >
+    <span>*</span>
+    <span id="err1"></span><br>
+    output: <textarea name="out" id="out" cols="30" rows="5" disabled></textarea><br>
+    <button type="button" name="btn" id="btn" value="btn" onclick="validatenum()" >result</button>
+
+</fieldset>
+        </form>
+    </body>
+</html>
