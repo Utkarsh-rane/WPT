@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style>
+td{
+padding-bottom: 20px;
+}
+td:first-child{
+    text-align: right;
+}
+        </style>
+    </head>
+    <body style="background-color: rgb(49, 123, 183); color: white; ">
+        
+        <fieldset style="width: 50%;">
+            <legend>Registration Details</legend>
+            <table >
+                <tr>
+                    <td><label for="university">University :</label> </td>
+                <td> <input type="text" name="uni" id="university"></td>
+                </tr>
+                <tr>
+                    <td><label for="Insitude">Insitude</label></td>
+                    <td><input type="text" name="uni" id="Insitude"></td>
+                </tr>
+                <tr>
+                    <td><label for="branch">Branch:</label></td>
+                    <td><select name="br" id="branch">
+                        <option value="abc">--Select--     </option>
+                        <option value="EE">Electrical Engi</option>
+                        <option value="ME">Mechanical Engi</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><label for="degree">Degree:</label></td>
+                    <td><select name="de" id="degree">
+                        <option value="abc">--Select--</option>
+                        <option value="E">Electrical</option>
+                        <option value="M">Mechanical</option>
+                    </select>
+                    
+                    <input type="radio" name="pur" id="p"><label for="p">Pursuing</label>
+                    <input type="radio" name="pur" id="c"><label for="c">Completed</label>
+                </td>
+                </tr>
+                <tr>
+                    <td><label for="avg">Average CPI:</label></td>
+                    <td><input type="number" name="avg" min="0" max="10">
+                    &nbsp; Upto <input type="number" name="avg" min="0" max="100">Th Semester</td>
+                </tr>
+                <tr>
+                    <td><label for="y">Experience</label></td>
+                    <td><input type="number" id="y" min="0" max="50" >Years</td>
+                </tr>
+                <tr>
+                    <td><label >Your Website or Blog:</label></td>
+                    <td><input type="text" placeholder="http://"></td>
+                </tr>
+            </table>
+      
+            
+            
+        </fieldset>
+    </body>
+</html>
