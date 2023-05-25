@@ -1,0 +1,65 @@
+<!-- 2. Accept an integer value and a message from user and print the message that
+    many number oftimes. -->
+    <html>
+        <head>
+            <style>
+                span{
+                    color: red;
+                }
+                input{
+                    margin: 5px;;
+                }
+                button{
+                  margin-left: 20%;
+                }
+            </style>
+            <script>
+                function validatedata(numid, errmsg)
+                {
+                    var a = document.getElementById(numid).value
+                    if(a==="" || isNaN(a))
+                    {
+                        document.getElementById(errmsg).innerHTML="pls enter numeric data"
+                        return false;
+                    }
+                    document.getElementById(errmsg).innerHTML="";
+                    return true;
+                }
+                function validatenum()
+                {
+                    var flaga = validatedata("n1","err1")
+                    if(flaga)
+                    {
+                        print1()
+                    }
+                }
+                function print1()
+                {
+                    var p = parseInt(document.getElementById("n1").value)
+                    var msg=document.getElementById("mss1").value
+                    for( i=1; i<=p; i++)
+                    {
+                        document.getElementById('out').value +=msg +"\n" ;
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            <form name="msgg">
+                <fieldset style="margin:0% 60% 0% 20%;">
+                    enter number: <input type="text" name="num1" id="n1">
+                    <span name>*</span>
+                    <span id="err1"></span>
+                    <br>
+                     write message: <input type="text" name="msg" id="mss1"><br>
+                    output: <textarea  id="out" cols="30" rows="5" disabled></textarea><br>
+                    <button type="button" name="b1" id="b1" value="b1" onclick="validatenum()">Print</button>
+                   
+                </fieldset>
+               
+            </form>
+        </body>
+    </html>
+    
+    
+    
