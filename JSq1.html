@@ -1,0 +1,65 @@
+<!-- Write a program to accept three positive numbers and output the largest of them. -->
+<html>
+    <Head>
+        <style>
+            span{
+                color: red;
+            }
+        </style>
+        <script>
+            function validatedata(num, errmsg)
+            {
+                var a=document.getElementById(num).value
+                if(a==="" || isNaN(a))
+                {
+                    document.getElementById(errmsg).innerHTML="pls enter numeric data"
+                    return false;
+                }
+                document.getElementById(errmsg).innerHTML="";
+                return true;
+            }
+            function validatenum()
+            {
+                var flaga=validatedata('n1','err1')
+                var flagb=validatedata('n2','err2')
+                var flagc=validatedata('n3','err3')
+               {
+                largest()
+               }
+            }
+            function largest()
+            {
+                var a=parseInt(document.getElementById('n1').value);
+                var b=parseInt(document.getElementById('n2').value);
+                var c=parseInt(document.getElementById('n3').value);  
+             
+                var ans=Math.max(a,b,c);
+               document.getElementById("result").value=ans
+               console.log("largest: : "+ans);
+            }
+        </script>
+    </Head>
+    <body>
+    <form name="gratest">
+        num1: <input type="text" name="num1" id="n1">
+        <span name>*</span>
+        <span id="err1"></span>
+        <br>
+       
+        num2: <input type="text" name="num2" id="n2">
+        <span name>*</span>
+        <span id="err2"></span>
+        <br>
+
+
+        num3: <input type="text" name="num3" id="n3">
+        <span name>*</span>
+        <span id="err3"></span>
+        <br>
+
+
+        result: <input type="text" name="result" id="result"  disabled><br>
+        <button type="button" name="large" id="large" value="large" onclick="validatenum()">Find largest</button>
+    </form>
+    </body>
+</html>
