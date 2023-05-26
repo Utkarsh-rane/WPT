@@ -1,0 +1,84 @@
+<!-- Write a function that accepts two numbers and a operator like (+,-,*, /) from user and performs the
+appropriate operation indicated by the operator. -->
+
+<html>
+    <head>
+        <style>
+            span{
+                color: red;
+            }
+            input{
+                margin: 10px;
+            }
+        </style>
+        <script>
+            function validatedata(num,msge)
+            {
+                var a= document.getElementById(num).value;
+                if(a==="" || isNaN(a))
+                {
+                    document.getElementById(msge).innerHTML="enter numeric value";
+                    return false;
+                }
+                document.getElementById(msge).innerHTML="";
+                return true;
+            }
+           function validatenum()
+            {
+                var flag= validatedata('n1','err1')
+                var flag2= validatedata('n2','err3')
+               if(flag && flag2)
+               {
+                   calcu();
+               }
+            }
+            function calcu()
+            {
+                var a= parseInt(document.getElementById('n1').value)
+                var b= parseInt(document.getElementById('n2').value)
+                var c= document.getElementById('operator').value
+                if (c=="+")
+                {
+                    ans=a+b
+                }
+                else if (c=="-")
+                {
+                    ans=a-b
+                }
+                else if (c=="*")
+                {
+                    ans=a*b
+                }
+                else if (c=="/")
+                {
+                    ans=a/b
+                }
+                else 
+                {
+                    document.getElementById('err2').innerHTML="enter valid operator(+,-,*,/)";
+                }
+                document.getElementById('result').value=ans;
+
+            }
+        </script>
+    </head>
+    <body>
+        <form name="cal">
+            <fieldset style="margin:0% 40% 0% 20%;">
+                 enter num1: <input type="text" name="num1" id="n1" >
+                 <span>*</span>
+                 <span id="err1"></span><br>
+                 enter operator: <input type="text" name="ope" id="operator" >
+                 <span>*</span>
+                 <span id="err2"></span><br>
+                 enter num2: <input type="text" name="num2" id="n2" >
+                 <span>*</span>
+                 <span id="err3"></span><br>
+
+                 result: <input type="text" name="result" id="result" disabled>
+                 <button type="button" name="btn" id="btn" value="btn" onclick="validatenum()">submit</button>
+
+            </fieldset>
+        </form>
+    </body>
+</html>
