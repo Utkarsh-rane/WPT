@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            @keyframes runn {
+                from{
+                 left:0%;
+                }
+                to{
+                    left:100%;
+                }
+                
+            }
+            @keyframes kahipan {
+                    25%{
+                        left: 25%;
+                    }
+                    50%{
+                        left: 50%;
+                    }
+                    75%{
+                        left: 75%;
+                    }
+                    100%{
+                        left: 100%;
+                    }
+                }
+            #mydiv{
+               
+                animation: runn;
+                animation-duration: 10s;
+                animation-delay: 1s;
+                animation-iteration-count: infinite;
+                position: relative;
+                z-index: -1;
+                top:240;
+            }
+            #my{
+                z-index: 1;
+                position: absolute;
+           
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="mydiv">
+            <img src="./images/abc.gif" >
+            
+        </div>
+        <div id="my">
+           <span > <img src="./images/ZhkE.gif" style="margin: 0%;"></span> <span > <img src="./images/ZhkE.gif" style="margin: 0%;"></span> 
+        </div>
+       
+
+    </body>
+</html>

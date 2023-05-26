@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <style>
+            @keyframes runn {
+                from{
+                 right:0%;
+                }
+                to{
+                    right:100%;
+                }
+                
+            }
+            @keyframes clouds {
+                from{
+                    right:0%;
+                }
+                to{
+                    right:100%;
+                }
+                
+            }
+           
+            #mydiv{
+               
+                animation: runn;
+                animation-duration: 10s;
+                animation-delay: 1s;
+                animation-iteration-count: infinite;
+                position: relative;
+                z-index: 3;
+                top:0;
+            }
+            #my{
+                z-index: -1;
+                position: fixed;
+                top:400;
+                margin: 0%;
+            }
+            #sun{
+                z-index: -1;
+                position: fixed;
+                top: 50;
+                
+            }
+            #cloud{
+                
+                z-index: 1;
+                position: fixed;
+                top: 20;
+            }
+            #birds{
+                
+                animation: clouds;
+                animation-duration: 30s;
+                animation-delay: 0s;
+                animation-iteration-count: infinite;
+                position: relative;
+                z-index: 2;
+                position: relative;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div id="birds" align="right">
+            <img src="../images/birds.gif" >
+        </div>
+        <div id="cloud">
+            <img src="../images/cloud2.gif" width="475px" ><img src="../images/cloud2.gif" width="475px"><img src="../images/cloud2.gif" width="475px">
+        </div>
+        <div id="sun" >
+     <img src="../images/sun.gif" >
+        </div>
+
+        <div id="mydiv" align="right">
+            <img src="../images/tiger.gif" width="300px" >
+            
+        </div>
+        <div id="my" >
+           <img src="../images/road.gif"  ><img src="../images/road.gif"  ><img src="../images/road.gif"  >
+        </div>
+       
+
+    </body>
+</html>
