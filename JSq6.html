@@ -1,0 +1,44 @@
+<!-- 6. Write a program to find sum of digits of given five-digit number. -->
+
+<html>
+<head>
+    <script src="./jsprogram/validatenum.js"></script>
+    <script>
+        function validatenum()
+                {
+                    var flaga = validatedata("n1","err1")
+                    if(flaga)
+                    {
+                      
+                        digitadd()
+                    }
+                }
+
+                function digitadd(){
+                    var n=document.getElementById('n1').value;
+                    var res=0;
+                    for(i=0;i<n.length; i++)
+                    {
+                       var arr= n.charAt(i);
+                       res+= parseInt(arr);
+                       arr=0;
+
+                    }
+                    document.getElementById('result').value=res;
+                }
+    </script>
+</head>
+
+    <body>
+        <form name="msgg">
+            <fieldset style="margin:0% 60% 0% 20%;">
+                enter number: <input type="text" name="num1" id="n1">
+                <span >*</span>
+                <span id="err1"></span>
+                <br>
+                result: <input type="text" name="result" id="result"  disabled><br>
+                <button type="button" name="b1" id="b1" value="b1" onclick="validatenum()">Print</button>
+               
+            </fieldset>
+    </body>
+</html>
