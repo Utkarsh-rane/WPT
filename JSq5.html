@@ -1,0 +1,60 @@
+<!-- Write a program to print the multiplication table of a given number up to 10 multiples. Eg for number 2,
+output should be like -->
+
+<html>
+    <head>
+        <style>
+            span{
+                color: red;
+            }
+            input{
+                margin: 10px;
+            }
+        </style>
+        <script>
+            function validatedata(num,msge)
+            {
+                var a= document.getElementById(num).value;
+                if(a==="" || isNaN(a))
+                {
+                    document.getElementById(msge).innerHTML="enter numeric value";
+                    return false;
+                }
+                document.getElementById(msge).innerHTML="";
+                return true;
+            }
+           function validatenum()
+            {
+                var flag= validatedata('n1','err1')
+                
+               if(flag)
+               {
+                   table();
+               }
+            }
+            function table()
+            {
+               var a= parseInt(document.getElementById('n1').value)
+               for(i=1; i<=10; i++)
+               {
+                ans=i*a;
+                document.getElementById('table').innerHTML +=i+"*"+a+"="+ans+"\n"
+               }
+            }
+            
+            </script>
+    </head>
+    <body>
+        <form name="cal">
+            <fieldset style="margin:0% 40% 0% 20%;">
+                enter number: <input type="text" name="num" id="n1">
+                <span>*</span>
+                <span id="err1"></span><br>
+        
+                result: <textarea name="area" id="table" cols="30" rows="10"></textarea><br>
+        
+                <button type="button" name="btn" id="btn" value="btn" onclick="validatenum()">submit</button>
+
+            </fieldset>
+    </body>
+</html>
