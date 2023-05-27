@@ -24,12 +24,22 @@
                
                 animation: runn;
                 animation-duration: 10s;
-                animation-delay: 1s;
+                animation-delay: 0s;
                 animation-iteration-count: infinite;
                 position: relative;
                 z-index: 3;
                 top:0;
             }
+            #dear{
+               
+               animation: runn;
+               animation-duration: 15s;
+               animation-delay: 0s;
+               animation-iteration-count: infinite;
+               position: absolute;
+               z-index: 4;
+               top:450;
+           }
             #my{
                 z-index: -1;
                 position: fixed;
@@ -73,13 +83,17 @@
         </div>
 
         <div id="mydiv" align="right">
-            <img src="../images/tiger.gif" width="300px" >
-            
+            <img src="../images/tiger.gif" width="300px" >  
+        </div>
+        <div id="dear" align="right">
+            <img src="../images/dear.gif" >
         </div>
         <div id="my" >
            <img src="../images/road.gif"  ><img src="../images/road.gif"  ><img src="../images/road.gif"  >
         </div>
-       
+       <div style="visibility: hidden; position: fixed;" >
+        <audio autoplay loop controls  src="../images/videopl_2023_05_27_15_37_12_531.mp3"></audio>
+       </div>
 
     </body>
 </html>
