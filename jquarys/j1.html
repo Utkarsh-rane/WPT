@@ -1,0 +1,132 @@
+<!-- /* Use javascript and JQuery to do the following                                                              
+display following form . As soon as text box gets the focus background of the text box should change 
+to yellow. After user clicks on submit button validate whether username starts with “An” if yes 
+display alert message “name starts with An” and change form background to cyan  */ -->
+
+<html>
+    <style>
+.fis{
+border: 2px solid ;
+margin-left: 400px;
+margin-right: 400px;
+}
+table{
+ margin: 10px;
+}
+th,td{
+    padding-left: 10px;
+    padding-top: 10px;
+}
+        .myclass{
+            background-color: white;
+        }
+        .myc{
+            background-color: yellow;
+        }
+        .myn{
+            background-color: cyan;
+        }
+    </style>
+<script src="./jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#btn').click(function(){
+            var flagn=validatetxt('name','err1')
+            var flage=validatetxt('email','err2')
+            var flags=validatenum('sal','err3')
+        if(flage && flagn && flags){
+               valusername('name')
+               console.log("success")
+        }
+        })
+        function valusername(name){
+            var name=$('#'+name).val();
+            var pattern=/^an.*$/gi
+            var res=name.search(pattern)
+            if(res===0){
+              alert( "name starts with An" )
+              $('#name').addClass('myn').removeClass('myclass');
+            }
+        }
+    function validatetxt(name,err)
+        {
+           var name=$('#'+name).val();
+           if(name==="" || name.trim().length===0)
+           {
+             $('#'+err).html("the text box cannot be empty")
+             return false;
+           }
+           else
+           {
+            $('#'+err).html("")
+             return true;
+           }
+        }
+        function validatenum(salary,err)
+        {
+           var salary=$('#'+salary).val();
+           if(salary==="" || isNaN(salary))
+           {
+             $('#'+err).html("the text box cannot be empty or text")
+             return false;
+           }
+           else
+           {
+            $('#'+err).html("")
+             return true;
+           }
+        }
+        $('#name').focus(function(){
+            $('#name').addClass('myc').removeClass('myclass');
+        })
+        $('#name').blur(function(){
+            $('#name').addClass('myclass').removeClass('myc');
+        })
+        $('#email').focus(function(){
+            $('#email').addClass('myc').removeClass('myclass');
+        })
+        $('#email').blur(function(){
+            $('#email').addClass('myclass').removeClass('myc');
+        })
+        $('#sal').focus(function(){
+            $('#sal').addClass('myc').removeClass('myclass');
+        })
+        $('#sal').blur(function(){
+            $('#sal').addClass('myclass').removeClass('myc');
+        })
+
+    })
+</script>
+    
+
+    <body>
+        <form class="myclass">
+            <fieldset class="fis">
+                <table>
+                    <tr>
+                        <th>    
+                        </th>
+                        <th>Employee registration form</th>
+                    </tr>
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text" id="name" name="nam"></td>
+                        <td><span id="err1"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="text" id="email" name="emai"></td>
+                        <td><span id="err2"></span></td>
+                    </tr>
+                    <tr>
+                        <td>salary:</td>
+                        <td><input type="text" id="sal" name="salary"></td>
+                        <td><span id="err2"></span></td>
+                    </tr>
+                </table>
+                &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" id="btn" name="btn" class="btn" value="btn">submit</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" id="btn1" name="btn1" class="btn1" value="btn1">cancel</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

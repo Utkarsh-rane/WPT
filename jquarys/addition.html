@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="./jquery.js"></script>
+        <script>
+           $(document).ready(function(){
+            $('#btn').click(function(){
+                var a=parseInt($('#n1').val())
+                var b=parseInt($('#n2').val())
+                var res=a+b
+                $('#mydiv').html(res);
+                $('#result').val(res)
+            })
+           })
+        </script>
+    </head>
+    <body>
+       <form action="addition">
+        enter number1: <input type="text" id="n1" name="num1">
+        <br>
+        enter number2: <input type="text" id="n2" name="num2">
+        <br>
+       result: <input type="text" id="result" name="result" readonly>
+        <br>
+        <button type="button" id="btn" name="btn" value="btn">add</button>
+       </form>
+       <div id="mydiv">
+
+       </div>
+    </body>
+</html>

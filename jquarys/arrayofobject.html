@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <script src="./jquery.js"></script>
+        <script>
+                arr=[{pid:1,pname:'chair',price:100},
+                     {pid:2,pname:'table',price:500},
+                     {pid:3,pname:'sofa',price:10000}]
+                     
+               function displaytable(a=arr)
+                {
+                str="<table border='2'><tr><th>Product id</th><th>Product name</th><th>product price</th></tr>";
+                for(var ob of a){
+                 str+=` <tr><td>${ob.pid}</td><td>${ob.pname}</td><td>${ob.price}</td></tr>`
+                }
+                str+="</table>"
+                $('#mydiv').html(str)
+                 }  
+
+            $(document).ready(function(){
+              //to add the product 
+                $('#btn').click(function(){
+                var pid=$('#pid').val()
+                var pname=$('#pname').val()
+                var price=$('#price').val()
+                var ob={pid:parseInt(pid),pname:pname,price:parseInt(price)}
+                arr.push(ob);
+                displaytable();
+                clearform();
+                })
+             function clearform()
+             {
+                var pid=$('#pid').val("")
+                var pname=$('#pname').val("")
+                var price=$('#price').val("")
+             }
+             //delete product 
+             $('#btn1').click(function(){
+                var pid=parseInt($('#pid').val())
+                var pos=arr.findIndex(a=>a.pid===pid)
+               console.log( pid);
+               console.log( pos);
+                if(pos!=-1){
+                    alert("cbs")
+                    arr.splice(pos,1)
+                    displaytable();  
+                }
+                else{
+                    alert("not found")
+                }
+                clearform();
+             })
+             //update product
+             $('#btn2').click(function(){
+                var pid=parseInt($('#pid').val())
+                var pos=arr.findIndex(a=>a.pid===pid)
+             
+                if(pos!=-1){
+                    var price1=parseInt(prompt("Enter new price"))
+                   arr[pos].price=price1
+                    displaytable();  
+                }
+                else{
+                    alert("not found")
+                }
+                clearform();
+             })
+             $('#search').on("keydown",function(event){
+                console.log(event.key)
+                console.log(event.which)
+            if(event.which===13){
+                var searchtext=document.getElementById("search").value;
+                var arr2=arr.filter(a=>a.pname.includes(searchtext));
+                displaytable(arr2)
+            }
+            })
+            })
+           
+          
+        </script>
+    </head>
+    <body onload="displaytable()" id="body1">
+        <form >
+
+            pid: <input type="text" id="pid" name="pid"><br>
+            pname: <input type="text" id="pname" name="proname"><br>
+            price: <input type="text" id="price" name="price"><br>
+             
+            <button type="button" id="btn" name="btn" value="add">adddata</button>
+            <button type="button" id="btn1" name="btn1" value="delete">deletedata</button>
+            <button type="button" id="btn2" name="btn2" value="update">updatedata</button>
+        </form>
+        search: <input type="text" id="search" name="search"><br>
+        <br>
+        <div id="mydiv">
+
+        </div>
+    </body>
+</html>
